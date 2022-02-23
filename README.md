@@ -8,6 +8,8 @@ pip install gym
 
 pip install pygame
 
+pip install pyglet
+
 pip install pystan
 
 pip install atari_py
