@@ -1,6 +1,9 @@
 OpenAI Gym
 
 ```
+py -3 -m venv .venv
+.venv\scripts\activate
+
 pip install gym
 
 pip install pygame
