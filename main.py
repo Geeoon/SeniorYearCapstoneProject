@@ -1,4 +1,5 @@
 # https://github.com/ejmejm/CartPole-RL-DNN/blob/master/DeepNNRollout.ipynb
+# https://stackoverflow.com/questions/56904270/difference-between-openai-gym-environments-cartpole-v0-and-cartpole-v1
 import gym
 import numpy as np
 import matplotlib
@@ -28,7 +29,7 @@ class Agent:
         self.discount_factor = 0.99
 
         self.num_episodes = 1500
-        self.max_time = 200
+        self.max_time = 500
         self.all_rewards = []
         self.saver = tf.train.Saver()
         self.train_data = []
@@ -70,7 +71,7 @@ class Agent:
                         break
                 if i % 100 == 0 and i != 0:
                     print(np.mean(self.all_rewards[-100:]))
-                    if np.mean(self.all_rewards[-100:]) == 200:
+                    if np.mean(self.all_rewards[-100:]) == self.max_time:
                         break
             self.saver.save(sess, "/tmp/model.ckpt")
 
